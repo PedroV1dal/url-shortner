@@ -63,7 +63,7 @@ export class AuthController {
       logger.info(`User logged in: ${email}`);
       res.json({ token });
     } catch (error) {
-      logger.error("Error logging in:", error);
+      logger.error("Error logging in", { error });
       res.status(500).json({ message: "Internal server error" });
     }
   };
