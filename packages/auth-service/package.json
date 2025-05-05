@@ -12,8 +12,7 @@
     "lint": "eslint 'src/**/*.ts'",
     "test": "jest",
     "migrate:create": "mikro-orm migration:create",
-    "migrate:up": "mikro-orm migration:up",
-    "prepare": "husky install"
+    "migrate:up": "mikro-orm migration:up"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,34 @@
+{
+  "name": "url-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc",
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "jest",
+    "migrate:create": "mikro-orm migration:create",
+    "migrate:up": "mikro-orm migration:up"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.3",
+    "@types/uuid": "^10.0.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@mikro-orm/cli": "^6.4.14",
+    "@mikro-orm/core": "^6.4.14",
+    "@mikro-orm/migrations": "^6.4.14",
+    "@mikro-orm/postgresql": "^6.4.14",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "reflect-metadata": "^0.2.2",
+    "winston": "^3.17.0"
+  }
+}
