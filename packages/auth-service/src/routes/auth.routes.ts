@@ -11,6 +11,10 @@ export const authRouter = (emFork: EntityManager) => {
     RequestContext.create(emFork, next);
   });
 
+  router.get("/health", (req, res) => {
+    res.status(200).json({ status: "ok" });
+  });
+
   const authController = new AuthController(emFork);
 
   /**

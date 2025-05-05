@@ -8,7 +8,7 @@ export class User {
   id: string = v4();
 
   @Property()
-  @Unique()
+  @Unique({ name: "uq_users_email" })
   email!: string;
 
   @Property()

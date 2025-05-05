@@ -11,12 +11,10 @@ export class AuthController {
 
   register: RequestHandler<{}, any, RegisterDto> = async (req, res) => {
     try {
-      const { email, password } = req.body;
+      const email = req.body.email.toLowerCase().trim();
+      const { password } = req.body;
 
-      const existingUser = await this.em.findOne(User, {
-        email,
-        deletedAt: null,
-      });
+      const existingUser = await this.em.findOne(User, { email });
 
       if (existingUser) {
         res.status(400).json({ message: "Email already registered" });
@@ -34,14 +32,15 @@ export class AuthController {
       logger.info(`New user registered: ${email}`);
       res.status(201).json({ message: "User registered successfully" });
     } catch (error) {
-      logger.error("Error registering user:", error);
+      logger.error("Error registering user", { error });
       res.status(500).json({ message: "Internal server error" });
     }
   };
 
   login: RequestHandler<{}, any, LoginDto> = async (req, res) => {
     try {
-      const { email, password } = req.body;
+      const email = req.body.email.toLowerCase().trim();
+      const { password } = req.body;
 
       const user = await this.em.findOne(User, { email, deletedAt: null });
 
