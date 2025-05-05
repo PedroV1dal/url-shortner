@@ -11,9 +11,6 @@
     "dev": "lerna run dev --parallel",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "*.ts": "eslint --max-warnings=0"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -23,7 +20,6 @@
   ],
   "devDependencies": {
     "@types/node": "^22.15.3",
-    "husky": "^8.0.0",
     "lerna": "^8.2.2",
     "lint-staged": "^15.5.1",
     "typescript": "^5.8.3"
